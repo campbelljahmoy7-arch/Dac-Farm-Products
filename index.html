@@ -8,16 +8,12 @@
 
   <style>
     :root{
-      /* Herb + Earth palette */
-      --bg1:#07140e;            /* deep green */
-      --bg2:#20140c;            /* deep brown */
-      --panel: rgba(255,255,255,.05);
-      --panel2: rgba(255,255,255,.04);
+      --bg1:#07140e;
+      --bg2:#20140c;
       --text:#f3f0e8;
       --muted:#d2c8b9;
       --line: rgba(243,240,232,.14);
       --green:#3aa86b;
-      --green2:#2e8a58;
       --gold:#d2a24c;
       --shadow: 0 20px 60px rgba(0,0,0,.45);
       --max: 1150px;
@@ -26,6 +22,7 @@
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -39,22 +36,20 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:18px; }
 
-    /* Announcement bar (IslandSpice vibe) */
     .announce{
       background: rgba(58,168,107,.12);
       border-bottom:1px solid rgba(58,168,107,.25);
-      color: var(--text);
-      font-weight:700;
-      letter-spacing:.2px;
+      font-weight:800;
       font-size:13px;
       text-align:center;
       padding:10px 12px;
+      letter-spacing:.2px;
     }
 
     header{
       position:sticky;
       top:0;
-      z-index:20;
+      z-index:30;
       backdrop-filter: blur(12px);
       background: rgba(7,20,14,.70);
       border-bottom:1px solid var(--line);
@@ -66,18 +61,21 @@
       gap:12px;
       padding:12px 0;
     }
+
+    /* ✅ BIGGER LOGO */
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
-      font-weight:900;
+      gap:14px;
+      font-weight:950;
       letter-spacing:.2px;
     }
     .brand img{
-      width:44px; height:44px;
+      width:72px;     /* bigger */
+      height:72px;    /* bigger */
       object-fit:contain;
-      border-radius:12px;
-      padding:6px;
+      border-radius:16px;
+      padding:8px;
       background: rgba(255,255,255,.04);
       border:1px solid var(--line);
       box-shadow: 0 10px 30px rgba(0,0,0,.35);
@@ -93,7 +91,7 @@
     .menu a{
       opacity:.92;
       font-size:14px;
-      font-weight:650;
+      font-weight:700;
     }
     .menu a:hover{ opacity:1; text-decoration:underline; }
 
@@ -103,7 +101,7 @@
       justify-content:center;
       padding:10px 14px;
       border-radius:14px;
-      font-weight:800;
+      font-weight:850;
       border:1px solid var(--line);
       background: rgba(255,255,255,.06);
       transition: transform .15s ease, background .15s ease;
@@ -120,7 +118,6 @@
       border-color: rgba(210,162,76,.30);
     }
 
-    /* Hero */
     .hero{
       padding:56px 0 18px;
       text-align:center;
@@ -133,7 +130,7 @@
     @media (max-width:520px){ .hero h1{ font-size:34px; } }
     .hero p{
       margin:0 auto 18px;
-      max-width:820px;
+      max-width:860px;
       color:var(--muted);
       font-size:15px;
     }
@@ -145,7 +142,6 @@
       margin-bottom:20px;
     }
 
-    /* Sections */
     .section{
       margin-top:18px;
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
@@ -165,7 +161,6 @@
       font-size:14px;
     }
 
-    /* Product cards */
     .grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -179,13 +174,16 @@
       border-radius: var(--radius);
       padding:16px;
       transition: transform .15s ease, background .15s ease;
+      display:block;
     }
     .card:hover{
       transform: translateY(-2px);
       background: rgba(0,0,0,.22);
     }
+
+    /* ✅ Product image area styled like IslandSpice: clean, centered, large */
     .prodImg{
-      height:190px;
+      height:240px;
       border-radius: 16px;
       border:1px solid var(--line);
       background: rgba(255,255,255,.04);
@@ -198,9 +196,10 @@
     .prodImg img{
       width:100%;
       height:100%;
-      object-fit: contain;
-      padding:10px;
+      object-fit:contain;
+      padding:14px;
     }
+
     .titleRow{
       display:flex;
       align-items:center;
@@ -213,9 +212,10 @@
       font-size:16px;
       line-height:1.2;
     }
+
     .pill{
       font-size:12px;
-      font-weight:800;
+      font-weight:900;
       padding:6px 10px;
       border-radius:999px;
       border:1px solid var(--line);
@@ -223,67 +223,20 @@
       color: var(--muted);
       white-space:nowrap;
     }
+
     .desc{
       margin:0;
       color: var(--muted);
       font-size:13px;
     }
 
-    /* Split blocks (Recipes / Newsletter style) */
-    .split{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:14px;
-    }
-    @media (max-width: 980px){ .split{ grid-template-columns:1fr; } }
-
-    .miniGrid{
+    /* recipes grid */
+    .grid2{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
-      gap:12px;
-    }
-    @media (max-width: 640px){ .miniGrid{ grid-template-columns:1fr; } }
-
-    .mini{
-      background: rgba(0,0,0,.18);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:14px;
-    }
-    .mini b{ display:block; margin-bottom:4px; }
-    .mini span{ color: var(--muted); font-size:13px; }
-
-    /* Newsletter form */
-    .formRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-    input{
-      flex:1 1 220px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      color: var(--text);
-      outline:none;
-    }
-
-    /* Contact */
-    .contactBox{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
       gap:14px;
-      align-items:start;
     }
-    @media (max-width: 900px){ .contactBox{ grid-template-columns:1fr; } }
-    .contactLine{
-      margin:0;
-      color: var(--muted);
-      font-size:14px;
-    }
-    .contactLine b{ color: var(--text); }
+    @media (max-width: 980px){ .grid2{ grid-template-columns: 1fr; } }
 
     footer{
       margin:18px 0 24px;
@@ -294,7 +247,6 @@
       font-size:13px;
     }
 
-    /* WhatsApp floating button */
     .whatsapp{
       position: fixed;
       right: 18px;
@@ -305,7 +257,7 @@
       background: rgba(58,168,107,.20);
       border:1px solid rgba(58,168,107,.38);
       box-shadow: var(--shadow);
-      font-weight:900;
+      font-weight:950;
     }
   </style>
 </head>
@@ -318,12 +270,13 @@
 
   <header>
     <div class="wrap nav">
-      <div class="brand">
+      <a class="brand" href="index.html" aria-label="DAC Farm Products Home">
         <img src="dac-logo.png" alt="DAC Farm Products logo">
         <div>DAC Farm Products</div>
-      </div>
+      </a>
 
       <nav class="menu">
+        <a href="index.html">Home</a>
         <a href="#products">Products</a>
         <a href="#recipes">Recipes</a>
         <a href="#contact" class="btn primary">Contact</a>
@@ -332,7 +285,6 @@
   </header>
 
   <main class="wrap">
-
     <section class="hero">
       <h1>Authentic Jamaican Flavour</h1>
       <p>
@@ -340,101 +292,80 @@
         ingredients — packaged for retail shelves and available for wholesale supply.
       </p>
       <div class="cta">
-        <a class="btn primary" href="#products">Buy Products</a>
+        <a class="btn primary" href="#products">Browse Products</a>
         <a class="btn gold" href="#contact">Wholesale Inquiry</a>
       </div>
     </section>
 
-    <!-- BESTSELLERS / PRODUCTS -->
+    <!-- PRODUCTS -->
     <section id="products" class="section">
-      <h2>Bestsellers</h2>
-      <p class="sub">Shop our most popular products.</p>
+      <h2>Products</h2>
+      <p class="sub">Click a product to view details (IslandSpice-style).</p>
 
       <div class="grid">
 
-        <article class="card">
+        <a href="pepper-sauce.html" class="card">
           <div class="prodImg">
             <img src="product1.png" alt="Chef’s Signature Pepper Sauce">
           </div>
           <div class="titleRow">
             <h3>Chef’s Signature Pepper Sauce</h3>
-            <span class="pill">Hot Sauce</span>
+            <span class="pill">$200 JMD</span>
           </div>
-          <p class="desc">
-            Bold Jamaican pepper sauce to elevate any dish — perfect for homes, restaurants, and retail shelves.
-          </p>
-        </article>
+          <p class="desc">Bold Jamaican pepper sauce to elevate any dish.</p>
+        </a>
 
-        <article class="card">
+        <a href="green-seasoning.html" class="card">
           <div class="prodImg">
             <img src="greenseasoning.png" alt="DAC Signature Green Seasoning">
           </div>
           <div class="titleRow">
             <h3>DAC Signature Green Seasoning</h3>
-            <span class="pill">Seasoning</span>
+            <span class="pill">$400 JMD</span>
           </div>
-          <p class="desc">
-            Herb-packed all-purpose seasoning ideal for marinades, meats, fish, soups, and everyday Jamaican cooking.
-          </p>
-        </article>
+          <p class="desc">Herb-packed all-purpose seasoning for everyday Jamaican cooking.</p>
+        </a>
 
-        <article class="card">
+        <a href="pepper-powder.html" class="card">
           <div class="prodImg">
             <img src="scotch-bonnet-powder.png" alt="Scotch Bonnet Pepper Powder">
           </div>
           <div class="titleRow">
-            <h3>Scotch Bonnet Pepper Powder</h3>
-            <span class="pill">Dry Spice</span>
+            <h3>Scotch Bonnet Pepper Powder (1lb)</h3>
+            <span class="pill">$2000 JMD</span>
           </div>
-          <p class="desc">
-            Clean, fiery Scotch Bonnet heat in powder form — great for rubs, stews, soups, and seasoning blends.
-          </p>
-        </article>
+          <p class="desc">Clean, fiery Scotch Bonnet heat in powder form.</p>
+        </a>
 
       </div>
     </section>
 
-    <!-- RECIPES + NEWSLETTER (IslandSpice layout feel) -->
+    <!-- RECIPES -->
     <section id="recipes" class="section">
-      <div class="split">
-        <div>
-          <h2>Recipes</h2>
-          <p class="sub">Simple recipe inspiration using DAC flavours (we can replace these with real recipes later).</p>
+      <h2>Recipes</h2>
+      <p class="sub">Click a recipe to open the full page.</p>
 
-          <div class="miniGrid">
-            <div class="mini">
-              <b>Jerk Chicken</b>
-              <span>Smoky, spicy, and herby — perfect with pepper sauce.</span>
-            </div>
-            <div class="mini">
-              <b>Escovitch Fish</b>
-              <span>Bright, peppery flavours with a clean kick.</span>
-            </div>
-            <div class="mini">
-              <b>BBQ Wings</b>
-              <span>Green seasoning + scotch bonnet powder for heat.</span>
-            </div>
-            <div class="mini">
-              <b>Soup Saturday</b>
-              <span>Boost your broth with herb seasoning + spice.</span>
-            </div>
+      <div class="grid2">
+        <a href="jerk-chicken.html" class="card">
+          <div class="prodImg">
+            <img src="jerkchicken.jpg" alt="DAC Signature Jerk Chicken">
           </div>
-        </div>
-
-        <div>
-          <h2>Join Our Mailing List</h2>
-          <p class="sub">Get offers, new products, and recipe drops (email capture demo for now).</p>
-
-          <form onsubmit="event.preventDefault(); alert('Subscribed (demo). We can connect this to Mailchimp/Formspree next.');">
-            <div class="formRow">
-              <input type="email" required placeholder="Enter your email" aria-label="Email address">
-              <button class="btn primary" type="submit">Subscribe</button>
-            </div>
-          </form>
-
-          <div style="margin-top:12px; color:var(--muted); font-size:13px;">
-            Prefer WhatsApp? Tap the button below to message us directly.
+          <div class="titleRow">
+            <h3>DAC Signature Jerk Chicken</h3>
+            <span class="pill">View Recipe</span>
           </div>
+          <p class="desc">Family-friendly jerk chicken: smoky, juicy, spicy and addictive.</p>
+        </a>
+
+        <div class="card" style="opacity:.75;">
+          <div class="prodImg">
+            <div style="color:var(--muted); font-weight:900;">More recipes coming soon</div>
+          </div>
+          <div class="titleRow">
+            <h3>Next Recipe Drop</h3>
+            <span class="pill">Soon</span>
+          </div>
+          <p class="desc">We’ll add more meals that feature DAC seasoning + pepper powder.</p>
         </div>
       </div>
     </section>
@@ -444,34 +375,32 @@
       <h2>Contact Us</h2>
       <p class="sub">Retail & wholesale inquiries welcome.</p>
 
-      <div class="contactBox">
-        <div class="mini">
-          <p class="contactLine"><b>Call:</b> (876) 632-5191</p>
-          <p class="contactLine"><b>WhatsApp:</b> (876) 573-4903</p>
-          <p class="contactLine"><b>Email:</b> dac-im@hotmail.com</p>
-          <p class="contactLine"><b>Location:</b> Kingston, Jamaica</p>
+      <div class="grid" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="card">
+          <h3 style="margin:0 0 6px;">Call</h3>
+          <p class="desc" style="margin:0;"><b style="color:var(--text)">(876) 632-5191</b></p>
         </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px;">WhatsApp</h3>
+          <p class="desc" style="margin:0;"><b style="color:var(--text)">(876) 573-4903</b></p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 6px;">Email</h3>
+          <p class="desc" style="margin:0;"><b style="color:var(--text)">dac-im@hotmail.com</b></p>
+        </div>
+      </div>
 
-        <div class="mini">
-          <b>Wholesale Request</b>
-          <span>
-            Send your product list + quantities + delivery location and we’ll respond quickly.
-          </span>
-          <div class="formRow" style="margin-top:12px;">
-            <a class="btn gold" href="mailto:dac-im@hotmail.com?subject=Wholesale%20Inquiry%20-%20DAC%20Farm%20Products">Email Wholesale</a>
-            <a class="btn primary" href="https://wa.me/18765734903" target="_blank" rel="noopener">WhatsApp Now</a>
-          </div>
-        </div>
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn gold" href="mailto:dac-im@hotmail.com?subject=Wholesale%20Inquiry%20-%20DAC%20Farm%20Products">Email Wholesale</a>
+        <a class="btn primary" href="https://wa.me/18765734903" target="_blank" rel="noopener">WhatsApp Now</a>
       </div>
     </section>
 
     <footer>
       © <span id="year"></span> DAC Farm Products • Authentic Jamaican Flavour
     </footer>
-
   </main>
 
-  <!-- WhatsApp floating button -->
   <a class="whatsapp" href="https://wa.me/18765734903" target="_blank" rel="noopener">WhatsApp</a>
 
   <script>
@@ -480,3 +409,4 @@
 
 </body>
 </html>
+
