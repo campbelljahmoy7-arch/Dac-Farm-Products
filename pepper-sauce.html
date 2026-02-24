@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chef’s Signature Pepper Sauce | DAC Farm Products</title>
+
+  <style>
+    :root{
+      --bg1:#07140e; --bg2:#20140c; --text:#f3f0e8; --muted:#d2c8b9;
+      --line: rgba(243,240,232,.14); --green:#3aa86b; --gold:#d2a24c;
+      --shadow: 0 20px 60px rgba(0,0,0,.45); --max: 1150px;
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 15% 0%, rgba(58,168,107,.20), transparent 60%),
+        radial-gradient(850px 500px at 95% 10%, rgba(210,162,76,.20), transparent 55%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px;}
+
+    header{
+      position:sticky; top:0; z-index:30;
+      backdrop-filter: blur(12px);
+      background: rgba(7,20,14,.70);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:14px; font-weight:950;
+    }
+    .brand img{
+      width:72px; height:72px; object-fit:contain;
+      border-radius:16px; padding:8px;
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .menu{display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
+    .menu a{opacity:.92; font-size:14px; font-weight:700;}
+    .menu a:hover{opacity:1; text-decoration:underline;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:14px; font-weight:850;
+      border:1px solid var(--line); background: rgba(255,255,255,.06);
+      cursor:pointer;
+    }
+    .btn.primary{background: rgba(58,168,107,.18); border-color: rgba(58,168,107,.38);}
+
+    .panel{
+      margin-top:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+
+    /* ✅ IslandSpice-style product layout */
+    .productLayout{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 980px){ .productLayout{grid-template-columns:1fr;} }
+
+    .imgBox{
+      border:1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,.04);
+      display:flex; align-items:center; justify-content:center;
+      min-height:520px;
+      overflow:hidden;
+    }
+    .imgBox img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:22px;
+    }
+
+    h1{margin:0 0 4px; font-size:34px; line-height:1.15;}
+    .price{font-weight:950; font-size:18px; margin:0 0 12px;}
+    .muted{color:var(--muted); font-size:14px;}
+
+    label{display:block; margin:14px 0 6px; color:var(--muted); font-size:13px; font-weight:800;}
+    select{
+      width:100%;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      outline:none;
+      font-weight:800;
+    }
+
+    .addBtn{
+      margin-top:12px;
+      width:100%;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.10);
+      color: var(--text);
+      font-weight:950;
+      cursor:pointer;
+    }
+    .addBtn:hover{background: rgba(255,255,255,.14);}
+
+    .block{
+      margin-top:14px;
+      border-top:1px solid rgba(243,240,232,.12);
+      padding-top:14px;
+    }
+    ul{margin:8px 0 0; padding-left:18px; color:var(--muted); font-size:14px;}
+
+    .whatsapp{
+      position: fixed; right: 18px; bottom: 18px; z-index:50;
+      padding:12px 14px; border-radius:999px;
+      background: rgba(58,168,107,.20);
+      border:1px solid rgba(58,168,107,.38);
+      box-shadow: var(--shadow);
+      font-weight:950;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="dac-logo.png" alt="DAC Farm Products logo">
+      <div>DAC Farm Products</div>
+    </a>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#recipes">Recipes</a>
+      <a href="index.html#contact" class="btn primary">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="panel">
+    <div class="productLayout">
+
+      <div class="imgBox">
+        <img src="product1.png" alt="Chef’s Signature Pepper Sauce">
+      </div>
+
+      <div>
+        <h1>Chef’s Signature Pepper Sauce</h1>
+        <p class="price">$200 JMD</p>
+
+        <p class="muted">
+          Bold Jamaican Pepper Sauce with a balanced kick — made to wake up any plate.
+          Great on chicken, fish, burgers, stews and everyday meals!
+        </p>
+
+        <label for="size">Product Size</label>
+        <select id="size">
+          <option selected>Standard Bottle</option>
+        </select>
+
+        <button class="addBtn" onclick="alert('Demo: Add to Cart. We can build a real cart next.')">
+          ADD TO CART
+        </button>
+
+        <div class="block">
+          <b>How to use it:</b>
+          <ul>
+            <li>Drizzle on grilled meats, fried chicken, and fish.</li>
+            <li>Mix into mayo for a spicy sandwich spread.</li>
+            <li>Add a spoon to stews for extra warmth.</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <b>Pairs well with:</b>
+          <ul>
+            <li>Jerk chicken</li>
+            <li>Rice & peas</li>
+            <li>Fried plantain</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<a class="whatsapp" href="https://wa.me/18765734903" target="_blank" rel="noopener">WhatsApp</a>
+</body>
+</html>
